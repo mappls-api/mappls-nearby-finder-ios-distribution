@@ -26,7 +26,12 @@ To perform nearby Finder search use `MapplsNearbyFinderOptions` class to pass re
 
 ## [Dependencies](#Dependencies)
 
-`MapplsAPICore` and `MapplsAPIKit` are dependencies which will require to use this SDK.
+This SDK requires the following Swift packages. Add them to your app target along with `MapplsNearbyFinder`.
+
+| Package | Repository URL | Minimum Version |
+| --- | --- | --- |
+| `MapplsAPICore` | https://github.com/mappls-api/mappls-api-core-ios-distribution.git | 2.1.4 |
+| `MapplsAPIKit` | https://github.com/mappls-api/mappls-api-kit-ios-distribution.git | 3.0.8 |
 
 ## Version History
 | Version | Last Updated |  Release Note |
@@ -40,13 +45,34 @@ To perform nearby Finder search use `MapplsNearbyFinderOptions` class to pass re
 
 ## [Installation](#Installation)
 
-This library is available through `CocoaPods`. To install, simply add the following line to your `podfile`:
+This library is available through Swift Package Manager.
 
-```ruby
-pod 'MapplsNearbyFinder', '3.0.0'
+### Xcode
+
+1. In Xcode, go to **File > Add Package Dependencies...**
+2. Enter the package URL: `https://github.com/mappls-api/mappls-nearby-finder-ios-distribution.git`
+3. Select **Up to Next Major Version** starting from `3.0.1`, then add the `MapplsNearbyFinder` product to your app target.
+4. Repeat for each package listed in [Dependencies](#Dependencies).
+
+### Package.swift
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/mappls-api/mappls-nearby-finder-ios-distribution.git", from: "3.0.1"),
+    .package(url: "https://github.com/mappls-api/mappls-api-core-ios-distribution.git", from: "2.1.4"),
+    .package(url: "https://github.com/mappls-api/mappls-api-kit-ios-distribution.git", from: "3.0.8")
+],
+targets: [
+    .target(
+        name: "YourTarget",
+        dependencies: [
+            .product(name: "MapplsNearbyFinder", package: "mappls-nearby-finder-ios-distribution"),
+            .product(name: "MapplsAPICore", package: "mappls-api-core-ios-distribution"),
+            .product(name: "MapplsAPIKit", package: "mappls-api-kit-ios-distribution")
+        ]
+    )
+]
 ```
-
-On running `pod install` command it will automatically download `MapplsNearbyFinder` and dependent frameworks.
 
 ## [Authorization](#Authorization)
 
