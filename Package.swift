@@ -1,4 +1,5 @@
-// swift-tools-version:5.3
+// swift-tools-version: 5.9
+
 import PackageDescription
 
 let package = Package(
@@ -9,25 +10,14 @@ let package = Package(
     products: [
         .library(
             name: "MapplsNearbyFinder",
-            targets: ["MapplsNearbyFinderWrapper"])
-    ],
-    dependencies: [
-        .package(url: "https://github.com/mappls-api/mappls-api-core-ios-distribution.git", from: "2.1.1"),
-        .package(url: "https://github.com/mappls-api/mappls-api-kit-ios-distribution-base.git", from: "3.0.3")
+            targets: ["MapplsNearbyFinder"]
+        )
     ],
     targets: [
         .binaryTarget(
             name: "MapplsNearbyFinder",
-            url: "https://mmi-api-team.s3.amazonaws.com/mappls-sdk-ios/mappls-nearby-finder/MapplsNearbyFinder.xcframework-3.0.0.zip",
-            checksum: "089b5974bc8fa456101766dadd1e4d1bf5c64c4f1ed579cb6d070779decd3f0a"
-        ),
-        .target(
-            name: "MapplsNearbyFinderWrapper",
-            dependencies: [
-                "MapplsNearbyFinder",
-                .product(name: "MapplsAPICore", package: "mappls-api-core-ios-distribution"),
-                .product(name: "MapplsAPIKit", package: "mappls-api-kit-ios-distribution-base")
-            ]
-        ),
+            url: "https://mmi-api-team.s3.amazonaws.com/mappls-sdk-ios/mappls-nearby-ui/MapplsNearbyFinder.xcframework-3.0.1.zip",
+            checksum: "1b88e0d2602c5df273982ba445741a64e14cb6a951058e5a752de47360928dc8"
+        )
     ]
 )

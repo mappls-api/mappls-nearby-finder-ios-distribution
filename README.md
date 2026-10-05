@@ -31,21 +31,29 @@ To perform nearby Finder search use `MapplsNearbyFinderOptions` class to pass re
 ## Version History
 | Version | Last Updated |  Release Note |
 | --- | --- |  --- |
-| 3.0.0 | 24 Feb 2026 | Added support for auth-2 <br> Intergrated Along The Route api in NRF. |
+| 3.0.1 | - |  Updated dependency versions. Minimum versions set to `MapplsAPICore (2.1.4)`, `MapplsAPIKit (2.0.8)`. |
+| 3.0.0 | 05 Oct 2026 |  Nearby search migrated to OAuth 2 based authentication. Added POI Along Route search. Project restructured with a bundled `Sample` app. |
+| 2.0.3 | 25 Feb 2025 |  'bitcode' disabled to support Xcode 15 |
+| 2.0.2 | 13 Oct 2023 |  Added request parameter `page` of type `int` in  `MapplsNearbyFinderSearchOptions |
+| 2.0.1 | 02 Jan 2023 |  Dependency version increaded to fix crash. Minimum versions set to `MapplsAPICore (1.0.4)`, `MapplsAPIKit(2.0.8)`. |
+| 2.0.0 | 14 June 2022 |  Initial Mappls Release. |
 
 ## [Installation](#Installation)
 
-This library is available through `Swift Package Manager`.
+This library is available through `CocoaPods`. To install, simply add the following line to your `podfile`:
 
 ```ruby
-https://github.com/mappls-api/mappls-nearby-finder-ios-distribution.git
+pod 'MapplsNearbyFinder', '3.0.0'
 ```
 
+On running `pod install` command it will automatically download `MapplsNearbyFinder` and dependent frameworks.
 
 ## [Authorization](#Authorization)
 
+From version `3.0.0`, nearby search is authenticated using OAuth 2.
+
 ### [MapplsAPICore](#MapplsAPICore)
-It is required to set MAPPLS's keys to use any MAPPL's SDK. Please see [here](https://github.com/mappls-api/mappls-ios-sdk/blob/main/docs/v2.0.1/MapplsAPICore.md) to achieve this.
+It is required to set MAPPLS's keys to use any MAPPL's SDK. Please see [here](https://github.com/mappls-api/mappls-ios-sdk#Table-Of-Content) to achieve this.
 
 ## [Usage](#Usage)
 
